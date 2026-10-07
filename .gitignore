@@ -31,3 +31,4 @@ webserver_config.py
 Thumbs.db
 
 .log
+logs/
