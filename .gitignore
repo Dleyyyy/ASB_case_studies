@@ -1,0 +1,31 @@
+# Environment Variables (Critical Security)
+.env
+
+# Local Data Storage
+/raw_data/
+*.csv
+
+# Database & In-Memory Files
+*.db
+*.duckdb
+*.wal
+
+# Python Artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# Apache Airflow Artifacts
+/logs/
+/plugins/
+airflow.cfg
+webserver_config.py
+
+# IDE & OS Configurations
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
