@@ -29,3 +29,5 @@ webserver_config.py
 .idea/
 .DS_Store
 Thumbs.db
+
+.log
