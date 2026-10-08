@@ -124,6 +124,7 @@ The pipeline is fully idempotent.
 ## Diagrams & Evidence
 
 ### Pipeline Architecture
+
 ```mermaid
 graph TD
     subgraph External Sources
@@ -155,8 +156,6 @@ graph TD
     style PostgreSQL Container fill:#e8f5e9,stroke:#4caf50,stroke-width:2px
 
 ### 2. OLTP Entity-Relationship Diagram
-```text
-```mermaid
 erDiagram
     sales_customers ||--o{ sales_orders : "places"
     sales_customers ||--o{ sales_invoices : "receives"
@@ -185,8 +184,7 @@ erDiagram
 
 
 ### 3. OLAP Star Schema Diagram
-```text
-```mermaid
+
 erDiagram
     fact_sale {
         int invoice_line_key PK
