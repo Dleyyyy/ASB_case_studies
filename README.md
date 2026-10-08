@@ -120,7 +120,6 @@ The pipeline is fully idempotent.
 *   **Baseline Snapshot Dates:** The initial dbt snapshot for `dim_customer` is artificially backdated to `1900-01-01` to ensure historical Kaggle transactions (2013-2016) successfully resolve to a valid surrogate key.
 
 ---
-
 ## Diagrams & Evidence
 
 ### Pipeline Architecture
