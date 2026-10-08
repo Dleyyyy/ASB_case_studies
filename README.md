@@ -131,13 +131,13 @@ graph TD
     end
 
     subgraph Docker Infrastructure
-        subgraph Apache Airflow Container
+        subgraph Airflow[Apache Airflow Container]
             S[setup.py via Kagglehub]
             D[DuckDB In-Memory]
             DBT[dbt Core]
         end
         
-        subgraph PostgreSQL Container
+        subgraph Postgres[PostgreSQL Container]
             RAW[(Raw Schema)]
             OLTP[(OLTP Schemas: application, sales, etc.)]
             OLAP[(OLAP Star Schema)]
@@ -151,9 +151,13 @@ graph TD
     OLTP -->|dbt transformation| OLAP
     
     style K fill:#f9f,stroke:#333,stroke-width:2px
-    style Apache Airflow Container fill:#e1f5fe,stroke:#03a9f4,stroke-width:2px
-    style PostgreSQL Container fill:#e8f5e9,stroke:#4caf50,stroke-width:2px
+    style Airflow fill:#e1f5fe,stroke:#03a9f4,stroke-width:2px
+    style Postgres fill:#e8f5e9,stroke:#4caf50,stroke-width:2px
+```
 
+### 2. OLTP Entity-Relationship Diagram
+
+```mermaid
 erDiagram
     sales_customers ||--o{ sales_orders : "places"
     sales_customers ||--o{ sales_invoices : "receives"
@@ -179,7 +183,11 @@ erDiagram
         int InvoiceID FK
         int StockItemID FK
     }
+```
 
+### 3. OLAP Star Schema Diagram
+
+```mermaid
 erDiagram
     fact_sale {
         int invoice_line_key PK
@@ -227,6 +235,7 @@ erDiagram
     dim_stock_item ||--o{ fact_order : "Filters"
     dim_date ||--o{ fact_sale : "Filters"
     dim_date ||--o{ fact_order : "Filters"
+```
 
 ### Business Questions & SQL Outputs
 *(Insert SQL result screenshots or tables answering the 10 business questions. Examples include total sales by fiscal year, top product categories, and SCD validation queries).*
