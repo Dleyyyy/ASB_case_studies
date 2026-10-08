@@ -155,7 +155,6 @@ graph TD
     style Apache Airflow Container fill:#e1f5fe,stroke:#03a9f4,stroke-width:2px
     style PostgreSQL Container fill:#e8f5e9,stroke:#4caf50,stroke-width:2px
 
-### 2. OLTP Entity-Relationship Diagram
 erDiagram
     sales_customers ||--o{ sales_orders : "places"
     sales_customers ||--o{ sales_invoices : "receives"
@@ -181,9 +180,6 @@ erDiagram
         int InvoiceID FK
         int StockItemID FK
     }
-
-
-### 3. OLAP Star Schema Diagram
 
 erDiagram
     fact_sale {
